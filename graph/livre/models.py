@@ -7,6 +7,9 @@ class Node(models.Model):
     creation_date = models.DateTimeField(auto_now_add=True)
     modification_date = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.entity
+
 
 class Edge(models.Model):
     start_node = models.ForeignKey(Node, on_delete=models.CASCADE, related_name='start_node')
@@ -14,3 +17,6 @@ class Edge(models.Model):
     action = models.CharField(max_length=200)
     creation_date = models.DateTimeField(auto_now_add=True)
     modification_date = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.action
