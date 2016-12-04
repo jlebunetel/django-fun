@@ -8,7 +8,7 @@ class Node(models.Model):
     modification_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.entity
+        return '[' + self.entity + '] ' + self.value
 
 
 class Edge(models.Model):
