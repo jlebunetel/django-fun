@@ -19,4 +19,6 @@ class Edge(models.Model):
     modification_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.action
+        start = '[' + self.start_node.entity + '] ' + self.start_node.value
+        end = '[' + self.end_node.entity + '] ' + self.end_node.value
+        return start + ' --> ' + self.action + ' --> ' + end
